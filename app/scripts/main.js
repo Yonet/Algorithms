@@ -5,9 +5,9 @@ var insertionSort = function(arr){
 	if (len === 1) return arr;
 	//for each element check the one before where it belongs and shift the rest.
 	else if(len > 2) {
+		// Sorted arr to be returned
 		var newArr = [arr[0]];
 		for(var i = 1; i < len; i++) {
-			// debugger;
 			var j = i;
 			while(j > 0) {
 				if(newArr[j-1] > arr[i]) {
@@ -16,6 +16,7 @@ var insertionSort = function(arr){
 					j--;
 				} else if (newArr[j-1] < arr[i]){
 					newArr[j] = arr[i];
+					// if the element before is smaller, stop checking
 					j = 0;
 				} 
 			}
