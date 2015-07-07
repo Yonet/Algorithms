@@ -9,19 +9,27 @@ TreeNode.prototype.isLeaf =  function(node){
 	return this.children.length === 0;
 }
 
-var bfs = function(root, func){
-	if (func){
-		func(root);
-	}
-	if(root.children && root.children.isArray){
-		root.children.forEach(function(child){
-			bfs(root.children[child], func);
-		})
-	} else {
-		for (child in root.children){
-			bfs(root.children[child], func);
+var bfs = function(node, func){
+	var que = [node];
+
+	while(que.length > 0) {
+		node = que.shift();
+		if(func) {
+			func(node);
+		}
+
+		if(node.children && node.children.isArray){
+			node.children.forEach(function(child){
+				que.push(node.children[child]);
+			})
+		} else {
+			for (child in node.children){
+				que.push(node.children[child]);
+			}
 		}
 	}
+	
+	// 
 }
 
 
@@ -68,4 +76,7 @@ var bfs = function(root, func){
 // 	}
 // } 
 
-
+// bfs(tree[0], function(node){
+// 	node.visited = true;
+// 	console.log('node', node);
+// })
