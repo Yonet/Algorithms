@@ -5,8 +5,6 @@ var mergeArrays = function(arr1, arr2) {
 		return arr1.concat(arr2);
 	} else {
 		var len = arr1.length + arr2.length;
-		var point1 = arr1[0];
-		var point2 = arr2[0];
 		var i = 0;
 		var j = 0;
 		while(result.length < len){
