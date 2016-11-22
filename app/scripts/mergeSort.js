@@ -1,14 +1,13 @@
 // You are given two sorted arrays, A and B. A has large enough buffer at the end to hold B. Right a method to merge B into A in sorted order.
 // 
 
-
 var solution = function(A, B){
 	
 	var indA = 0;
 	var indB = 0;
 	var temp = [];//3
 	var tempInd = 0;
-	var len = A.length+ B.length;
+	var len = A.length + B.length;
 	while (len > 0){
 	
 		temp.push(A[indA]);//3
