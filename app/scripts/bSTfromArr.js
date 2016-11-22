@@ -6,7 +6,6 @@ var BinaryTree = function(){
 	this.root = null;
 }
 
-
 BinaryTree.prototype.addNode = function(data, root) {
 	root = root || this.root;
 	if(this.root === null) {
@@ -21,9 +20,11 @@ BinaryTree.prototype.addNode = function(data, root) {
 		this.addNode(data, root.left);
 	}
 }
+
 var calculateMid = function(arr){
 	return Math.floor(arr.length/2);
 }
+
 var solution = function(arr) {
 	var bt = new BinaryTree();
 	
@@ -38,6 +39,7 @@ var solution = function(arr) {
 			addMiddle(rightArr);
 		}
 	}
+  
 	addMiddle(arr);
 	return bt;
 }
